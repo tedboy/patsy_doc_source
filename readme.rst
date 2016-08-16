@@ -1,3 +1,5 @@
+https://tedboy.github.io/patsy_doc
+
 Skeleton for creating documentations using Sphinx.
 
 - ``generate.py`` - original file in ``sphinx/ext/autosummary/generate.py``
