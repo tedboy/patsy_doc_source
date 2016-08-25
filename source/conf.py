@@ -34,6 +34,8 @@ autoclass_content='class' # http://www.sphinx-doc.org/en/stable/ext/autodoc.html
 import IPython.sphinxext
 import numpydoc
 
+
+
 # these needed to be set to False to avoid redundant toctree being created from autosummary (fml...wasted so much time on this...)
 # https://github.com/numpy/numpydoc, https://github.com/sphinx-doc/sphinx/issues/99
 numpydoc_class_members_toctree = False
@@ -46,6 +48,11 @@ extensions = [
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
     # 'numpydoc', # used to parse numpy-style docstrings for autodoc    # <- damn, causes an exception for patsy...
+]
+
+#--- for ipython directive (some patsy docstring uses it (couple in patsy.builtins module)---#
+ipython_execlines = ['import numpy as np', 'import matplotlib.pyplot as plt', # <- these are default
+    'from patsy import dmatrix, dmatrices,balanced,demo_data', # <- one needed to this
 ]
 
 # Add any paths that contain templates here, relative to this directory.
